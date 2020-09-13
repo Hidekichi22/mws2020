@@ -18,21 +18,20 @@ function html_filter(requestDetails){
         str += decoder.decode(); // end-of-stream
 
         // 空白, 改行を削除
-        str = str.replace(/(\s+|\r\n|\n|\r)/gm,'')
+        str = str.replace(/(\s+|\r\n|\n|\r)/gm,'');
         // headタグを抽出
-        str = match(/<head>.*<\/head>/)[0]
+        str = str.match(/<head>.*<\/head>/)[0];
 
-        /*
-         * ここに機能を追加する
-         */
+        // ここに機能を追加する
+        console.log(str);
 
-        filter.write(event.data); // データをブラウザにわたす
         filter.close();           // フィルタオブジェクトを終了する
     }
 
+    // 証明書関係 参考
     // https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/getSecurityInfo
     // https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/CertificateInfo
-    //console.log(browser.getSecurityInfo()
+    //console.log(browser.getSecurityInfo(requestDetails.requestId))
 }
 
 browser.webRequest.onBeforeRequest.addListener(
