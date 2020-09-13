@@ -1,8 +1,8 @@
 {
 
-  "description": "Demonstrating webRequests",
+  "description": "This add-on filters phishing banking site",
   "manifest_version": 2,
-  "name": "Intelligent Blocker",
+  "name": "Banking filter",
   "version": "1.0",
 
   "permissions": [
@@ -10,7 +10,6 @@
     "webRequestBlocking",
     "<all_urls>"
   ],
-  "web_accessible_resources" : ["src/foo_http.html","src/foo.html","src/foo_analysis.html"],
   "background": {
     "scripts": ["background.js"]
   }
