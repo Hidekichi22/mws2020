@@ -23,10 +23,13 @@ function html_filter(requestDetails){
         // 空白, 改行を削除
         str = str.replace(/(\s+|\r\n|\n|\r)/gm,'');
         // headタグを抽出
-        str = str.match(/<head>.*<\/head>/)[0];
-
-        // ここに機能を追加する
-        console.log(str);
+        str = str.match(/<head>.*<\/head>/);
+        // headタグがあれば次の処理に遷移
+        if (str != null) {
+            str = str[0];
+            // ここに機能を追加する
+            console.log(str);
+        }
 
         filter.close();           // フィルタオブジェクトを終了する
     }
