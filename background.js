@@ -4,6 +4,9 @@ function html_filter(requestDetails){
     let decoder = new TextDecoder('utf-8');
     let data = [];
 
+    // 遷移前のURLをとってくる
+    console.log(requestDetails.originUrl);
+
     filter.ondata = event => {    // データを受け取ったら(パケットに小分けされて何回も受け取る)
         data.push(event.data);    // データをスタックに積む
         filter.write(event.data); // データをブラウザにわたす
