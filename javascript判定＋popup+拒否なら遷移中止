@@ -1,0 +1,18 @@
+var html = document.body.innerHTML
+var str = '<script';
+console.log(html);
+if(html.includes(str)){
+	console.log(str.includes(str));
+	var result = window.confirm('JavaScriptが起動しようとしています。よろしいですか？');
+		if( result ) {
+    			console.log('OKがクリックされました');
+   		}
+    		else {
+     			console.log('キャンセルがクリックされました');
+			//$('a').click(function(e){
+			//	e.preventDefault();
+			//});
+			window.open('https://www.google.co.jp/', '_blank'); // 動作テスト用にgoogleに飛びます
+   		}
+
+}
