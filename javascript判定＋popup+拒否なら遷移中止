@@ -1,5 +1,5 @@
-var html = document.body.innerHTML
-var str = '<script';
+var html = document.body.innerHTML	//html取得
+var str = '<script';			
 console.log(html);
 if(html.includes(str)){
 	console.log(str.includes(str));
@@ -9,10 +9,10 @@ if(html.includes(str)){
    		}
     		else {
      			console.log('キャンセルがクリックされました');
-			//$('a').click(function(e){
-			//	e.preventDefault();
-			//});
-			window.open('https://www.google.co.jp/', '_blank'); // 動作テスト用にgoogleに飛びます
+			$('a').click(function(e){　//ここから遷移中止動作
+				e.preventDefault();
+			});
+			//window.open('https://www.google.co.jp/', '_blank'); // 動作テスト用にgoogleに飛びます
    		}
 
 }
