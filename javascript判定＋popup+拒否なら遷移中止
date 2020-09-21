@@ -12,7 +12,7 @@ if(html.includes(str)){			//取得したhtmlに'<script'が含まれているか
 			$('a').click(function(e){　//ここから遷移中止動作
 				e.preventDefault();
 			});
-			//window.open('https://www.google.co.jp/', '_blank'); // 動作テスト用にgoogleに飛びます
+			//window.location.href = 'https://www.google.co.jp/'; // 動作テスト用にgoogleに飛びます
    		}
 
 }
