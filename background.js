@@ -34,6 +34,8 @@ function html_filter(requestDetails){
         filter.close();           // フィルタオブジェクトを終了する
     }
 
+    let security_info = webRequest.getSecurityInfo()
+    console.log(security_info.certificates)
     // 証明書関係 参考
     // https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/getSecurityInfo
     // https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/CertificateInfo
