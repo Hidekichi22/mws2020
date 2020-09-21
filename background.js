@@ -1,17 +1,16 @@
 function redirectHandler(requestDetails){
     // Gmailでリンクをクリックして遷移した場合
-    if (requestDetails.originUrl.split('/')[2] == 'mail.google.com'){
+    if (requestDetails.originUrl.split('/')[2] == 'mail.google.com') {
         browser.webRequest.onBeforeRequest.addListener(
             // callback: このイベントが発生したときに呼び出される関数
             htmlFilter,
             // filter: このリスナーに送信されるイベントを制限するフィルタ
-            {urls:['*://*/*'], types:['main_frame']},
-            // blocking: リクエストを同期化して、リクエストをキャンセルまたはリダイレクトできるようにする
+            { urls:['*://*/*'], types:['main_frame'] },
+            // blocking: リクエストを同期化してリクエストをキャンセルまたはリダイレクトできるようにする
             ['blocking']
         );
-    }
-    else{
-        // gmail以外からだった時の処理(テスト用)
+    } else {
+        // Gmail以外からだった時の処理(テスト用)
         console.log(requestDetails.url.split('/')[2]);
     }
 }
@@ -29,10 +28,8 @@ function htmlFilter(requestDetails){
     filter.onstop = event => {    // データをすべて受け取り終わったら
         // スタックに積んだデータを文字列にデコード
         let str = '';
-        for (let buffer of data) {
-            str += decoder.decode(buffer, {stream: true});
-        }
-        str += decoder.decode(); // end-of-stream
+        for (let buffer of data) { str += decoder.decode(buffer, {stream: true}) }
+        str += decoder.decode();  // end-of-stream
 
         // 空白, 改行を削除
         str = str.replace(/(\s+|\r\n|\n|\r)/gm,'');
@@ -41,31 +38,28 @@ function htmlFilter(requestDetails){
         // headタグがあれば次の処理に遷移
         if (head != null) {
             head = head[0];
+
             // ここにフィルタ処理を追加する
             console.log(head);
+
         }
         filter.close();           // フィルタオブジェクトを終了する
     }
 
-    // 証明書
+    // 証明書の取得
     browser.webRequest.onHeadersReceived.addListener(
         async function(requestDetails){
             try {
-                let securityInfo = await browser.webRequest.getSecurityInfo(
-                    requestDetails.requestId,
-                    {}
-                )
+                let securityInfo = await browser.webRequest.getSecurityInfo(requestDetails.requestId, {})
                 console.log(securityInfo)
             }
-            catch(error){
-                console.error(error);
-            }
+            catch(error){ console.error(error) }
         },
-        {urls:['*://*/*'], types:['main_frame']}
-    )
+        { urls:['*://*/*'], types:['main_frame'] }
+    );
 }
 
 browser.webRequest.onBeforeRedirect.addListener(
   redirectHandler,
-  {urls: ['https://www.google.com/url?*']}
+  { urls: ['https://www.google.com/url?*'] }
 );
