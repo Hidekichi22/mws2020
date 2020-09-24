@@ -33,6 +33,7 @@ async function checkCertificate(requestDetails){
 
             if (!securityInfo['certificates'][0]['issuer'].match(/O=|OU=/)){
                 //警告の処理
+                console.log('secureじゃないでーす')
                 var url = redirect_html + '?to=' + requestDetails.url;
                 console.log(url);
                 return {redirectUrl: url};
