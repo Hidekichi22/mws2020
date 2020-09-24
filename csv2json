@@ -1,3 +1,12 @@
+// JavaScript
+// イベントハンドラ (ファイルがドロップされたら起動する)
+function loadedEkidata(event){
+  event.preventDefault();
+  var res = event.target.result;
+  var d = res.split('\n'); // 1行ごとに分割する
+  var jsonArray = csv2json(d); // JSON形式に変換
+}
+
 function csv2json(csvArray){
   var jsonArray = [];
      
