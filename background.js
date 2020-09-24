@@ -26,6 +26,8 @@ function redirectHandler(requestDetails){
 }
 
 async function checkCertificate(requestDetails){
+    console.log('checkCertificate始まったでやんす');
+    console.log(finance);
     if (finance){
         try{
             let securityInfo = await browser.webRequest.getSecurityInfo(requestDetails.requestId, {'certificateChain': false});
