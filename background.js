@@ -1,5 +1,5 @@
 const redirect_html = chrome.extension.getURL("./html/alert.html");
-
+let finance;
 
 function redirect(requestDetails){
     var url = redirect_html + '?to=' + requestDetails.url;
@@ -26,22 +26,24 @@ function redirectHandler(requestDetails){
 }
 
 async function checkCertificate(requestDetails){
-    try{
-        let securityInfo = await browser.webRequest.getSecurityInfo(requestDetails.requestId, {'certificateChain': false});
-        console.log(securityInfo)
+    if (finance){
+        try{
+            let securityInfo = await browser.webRequest.getSecurityInfo(requestDetails.requestId, {'certificateChain': false});
+            console.log(securityInfo)
 
-        if (!securityInfo['certificates'][0]['issuer'].match(/O=|OU=/)){
-            //警告の処理
-            var url = redirect_html + '?to=' + requestDetails.url;
-            console.log(url);
-            return {redirectUrl: url};
+            if (!securityInfo['certificates'][0]['issuer'].match(/O=|OU=/)){
+                //警告の処理
+                var url = redirect_html + '?to=' + requestDetails.url;
+                console.log(url);
+                return {redirectUrl: url};
+            }
+            else{
+                console.log('secureでーす');
+            }
         }
-        else{
-            console.log('secureでーす');
+        catch(error){
+            console.error(error); 
         }
-    }
-    catch(error){
-        console.error(error); 
     }
 }
 
@@ -49,7 +51,6 @@ function htmlFilter(requestDetails){
     let filter = browser.webRequest.filterResponseData(requestDetails.requestId);
     let decoder = new TextDecoder('utf-8');
     let data = [];
-    let finance = true;
 
     filter.ondata = event => {    // データを受け取ったら(パケットに小分けされて何回も受け取る)
         data.push(event.data);    // データをスタックに積む
@@ -83,8 +84,10 @@ function htmlFilter(requestDetails){
 	        console.log("The number of keywords in the header is..." + counter);
 
             if(counter > 0){
+                finance = true;
                 console.log("finance=true");      // 金融であればfinance=true
             }else{
+                finance = false;
                 console.log('finanse=false');    // else finanse=false
             }
             
