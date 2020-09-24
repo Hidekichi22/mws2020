@@ -77,6 +77,10 @@ function htmlFilter(requestDetails) {
 
 
             console.log(cert);
+            if (cert.certificates[0].issuer.match(/O=|OU=/)) {
+                console.log('secureじゃないでーす');
+                //popup表示
+            } else {console.log('secureでーす')}
             // *****************************************************
 
         }
