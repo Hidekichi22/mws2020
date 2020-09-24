@@ -80,14 +80,11 @@ function htmlFilter(requestDetails) {
             */
             console.log(cert);
             cert.then(value => {
-                console.log(value['certificates'][0]['issuer']);
+                if (!value['certificates'][0]['issuer'].match(/O=|OU=/)) {
+                    console.log('secure');
+                }
 
             });
-            // *************************************
-            if (cert.certificates[0].issuer.match(/O=|OU=/)) {
-                console.log('secureじゃないでーす');
-                //popup表示
-            } else {console.log('secureでーす')}
             // *****************************************************
 
         }
