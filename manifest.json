@@ -10,6 +10,7 @@
     "webRequestBlocking",
     "<all_urls>"
   ],
+  "web_accessible_resources": ["html/alert.html"],
   "background": {
     "scripts": ["background.js"]
   }
