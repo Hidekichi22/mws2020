@@ -48,6 +48,7 @@ async function checkCertificate(requestDetails){
 }
 
 function htmlFilter(requestDetails){
+    finance = false;
     let filter = browser.webRequest.filterResponseData(requestDetails.requestId);
     let decoder = new TextDecoder('utf-8');
     let data = [];
