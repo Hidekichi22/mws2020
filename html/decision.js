@@ -8,19 +8,10 @@ function getParam(name) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-function back() {
-    window.history.back()
-}
-
 function go() {
     url = getParam('to');
     window.location.href = url;
 }
-
-
-document.querySelector('#back').addEventListener('click', () => {
-    back();
-})
 
 document.querySelector('#go').addEventListener('click', () => {
     go();
