@@ -4,7 +4,6 @@ browser.webRequest.onBeforeRedirect.addListener(
     { urls: ['https://www.google.com/url\?q=http*'] }
 );
 
-
 const redirectDst = chrome.extension.getURL("html/alert.html");
 
 function redirect(requestDetails){
@@ -13,9 +12,9 @@ function redirect(requestDetails){
     return {redirectUrl: u};
 }
 
-
 function redirectHandler(requestDetails) {
     let distUrl = requestDetails.url.split('/')[5];
+    console.log(requestDetails.url);
     // Gmailでリンクをクリックして遷移した場合
     if (requestDetails.originUrl.split('/')[2] == 'mail.google.com') {
         // 既にハンドラがある場合リセットする
@@ -90,15 +89,23 @@ function htmlFilter(requestDetails) {
             
 
             */
-            var finance = true;
+           let finance = true;
             console.log(cert);
             cert.then(value => {
-                if (value['state'] != 'insecure'){
-                    if (!value['certificates'][0]['issuer'].match(/O=|OU=/)) {
-                        console.log('secure');
-                    }
+                try{
+                    var certificate = value['certificates'][0]['issuer'].match(/O=|OU=/);
+                } catch(error) {
+                    var certificate = false
                 }
-
+                if (!certificate && finance){
+                    //ポップアップ表示
+                    console.log('insecure');
+                    browser.webRequest.onBeforeRequest.addListener(
+                        redirect,
+                        { urls: ['https://*/*'], types: ['main_frame'] },
+                        ['blocking']
+                    )
+                }
             });
             // *****************************************************
 
