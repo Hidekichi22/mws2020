@@ -25,37 +25,39 @@ function redirectHandler(requestDetails) {
         browser.webRequest.onHeadersReceived.addListener(
             htmlFilter,
             { urls: ['*://'+distUrl+'/*'], types: ['main_frame'] },
-            ['blocking']// リクエストを同期化してリクエストをキャンセルまたはリダイレクトできるようにする
+            ['blocking'] // リクエストを同期化してリクエストをキャンセルまたはリダイレクトできるようにする
         );
     }
 }
 
+function bufferDecoder(data, chartype) {
+    let decoder = new TextDecoder(chartype);
+    let str = '';
+    for (let buffer of data) { str += decoder.decode(buffer, {stream: true}); }
+    str += decoder.decode();
+    return str;
+}
+
+function getChartype(str) {
+    let is_charset = str.replace(/(\"|\'|\s+|\/)/gm, '').match(/charset=.*/);
+    if (is_charset != null) { return is_charset[0].split('>')[0].split('=')[1].toLowerCase() }
+    else { return 'utf-8' }
+}
+
 function htmlFilter(requestDetails) {
+    let cert = getCertificate(requestDetails.requestId);
     let filter = browser.webRequest.filterResponseData(requestDetails.requestId);
-    let decoder = new TextDecoder('utf-8');
-    let decoder_shiftjis = new TextDecoder('shift-jis');
     let data = [];
 
-    let cert = getCertificate(requestDetails);
-
-    filter.ondata = event => {    // データを受け取ったら(パケットに小分けされて何回も受け取る)
+    filter.ondata = event => {    // データを受け取ったら動作
         data.push(event.data);    // データをスタックに積む
         filter.write(event.data); // データをブラウザにわたす
     }
-    filter.onstop = event => {    // データをすべて受け取り終わったら
-        // スタックに積んだデータを文字列にデコード
-        let str = '';
-        for (var buffer of data) { str += decoder.decode(buffer, {stream: true}); }
-        str += decoder.decode();  // end-of-stream
-
-        // Shift_JISだった場合、再デコード
-        is_shiftjis = str.match(/charset=Shift_JIS/g);
-        if (is_shiftjis != null){
-            str = '';
-            for (var buffer of data) { str += decoder_shiftjis.decode(buffer, {stream: true}); }
-            str += decoder_shiftjis.decode();
-        }
-
+    filter.onstop = event => {    // データをすべて受け取り終わったら動作
+        let str = bufferDecoder(data, 'utf-8');
+        // utf-8以外の文字コードの時デコードし直す
+        let chartype = getChartype(str);
+        if (chartype != 'utf-8') { str = bufferDecoder(data, chartype); }
         // 空白, 改行を削除
         str = str.replace(/(\s+|\r\n|\n|\r)/gm, '');
         // headタグを抽出
@@ -91,16 +93,10 @@ function htmlFilter(requestDetails) {
             var finance = true;
             console.log(cert);
             cert.then(value => {
-                try{
-                    var certificate = value['certificates'][0]['issuer'].match(/O=|OU=/);
-                } catch {
-                    var certificate = false;
-                }
-                if (!certificate && finance) {
-                    //console.log(certificate);
-                    //console.log('insecure');
-                    //ポップアップ表示
-                    redirect(requestDetails);
+                if (value['state'] != 'insecure'){
+                    if (!value['certificates'][0]['issuer'].match(/O=|OU=/)) {
+                        console.log('secure');
+                    }
                 }
 
             });
@@ -112,10 +108,10 @@ function htmlFilter(requestDetails) {
     return;
 }
 
-async function getCertificate(requestDetails){
+async function getCertificate(id){
     try {
         let securityInfo = await browser.webRequest.getSecurityInfo(
-            requestDetails.requestId,
+            id,
             {'certificateChain': false}
         );
         return securityInfo;
