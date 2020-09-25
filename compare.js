@@ -1,3 +1,9 @@
+const redirectDst = chrome.extension.getURL("html/alert.html");
+
+function redirect(requestDetails){
+    var u = redirectDst + '?to=' + requestDetails.url;
+    return {redirectUrl: u};
+}
 function redirectHandler(requestDetails){
     // Gmailでリンクをクリックして遷移した場合
     if (requestDetails.originUrl.split('/')[2] == 'mail.google.com') {

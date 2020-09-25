@@ -4,6 +4,16 @@ browser.webRequest.onBeforeRedirect.addListener(
     { urls: ['https://www.google.com/url\?q=http*'] }
 );
 
+
+const redirectDst = chrome.extension.getURL("html/alert.html");
+
+function redirect(requestDetails){
+    var u = redirectDst + '?to=' + requestDetails.url;
+    console.log(u);
+    return {redirectUrl: u};
+}
+
+
 function redirectHandler(requestDetails) {
     let distUrl = requestDetails.url.split('/')[5];
     // Gmailでリンクをクリックして遷移した場合
@@ -75,13 +85,22 @@ function htmlFilter(requestDetails) {
                 finance = false;
                 console.log('finanse=false');    // else finanse=false
             }
-
+            
 
             */
+            var finance = true;
             console.log(cert);
             cert.then(value => {
-                if (!value['certificates'][0]['issuer'].match(/O=|OU=/)) {
-                    console.log('secure');
+                try{
+                    var certificate = value['certificates'][0]['issuer'].match(/O=|OU=/);
+                } catch {
+                    var certificate = false;
+                }
+                if (!certificate && finance) {
+                    //console.log(certificate);
+                    //console.log('insecure');
+                    //ポップアップ表示
+                    redirect(requestDetails);
                 }
 
             });
