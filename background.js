@@ -40,7 +40,7 @@ function htmlFilter(requestDetails) {
             }
         } catch(error) {
             is_securecert.push(false);
-            console.log('state insecure') // デバッグ用
+            console.log('state is insecure') // デバッグ用
         }
     });
 
@@ -78,7 +78,7 @@ function htmlFilter(requestDetails) {
             let is_finance = false;
             if (counter > 0){ is_finance = true; }
             console.log('is_finance= '+is_finance.toString()); // デバッグ用
-            console.log(is_securecert[0]); // デバッグ用
+            console.log('is_securecert= '+is_securecert[0].toString()); // デバッグ用
 
             // 金融機関と判定され、信用できない証明書と判定された場合、アラートページへリダイレクトする
             if (is_finance && !is_securecert[0]) {
