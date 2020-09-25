@@ -30,13 +30,17 @@ function htmlFilter(requestDetails) {
     // 非同期にサーバ証明書を取得。サーバ証明書のissuerにOかOUがあったら信頼できるものとする
     let is_securecert = [];
     getCertificate(requestDetails.requestId).then(value => {
-        //console.log(value); // デバッグ用
+        console.log(value); // デバッグ用
         try {
-            if (value['certificates'][0]['issuer'].match(/(O=|OU=)/)) {
+            if (value['certificates'][0]['subject'].match(/(O=|OU=)/)) {
                 is_securecert.push(true);
-            } else { is_securecert.push(false); }
+            } else {
+                is_securecert.push(false);
+                console.log('week certificate') // デバッグ用
+            }
         } catch(error) {
             is_securecert.push(false);
+            console.log('state insecure') // デバッグ用
         }
     });
 
@@ -73,11 +77,11 @@ function htmlFilter(requestDetails) {
             // マッチングした個数が1個以上の場合、金融機関と判定する
             let is_finance = false;
             if (counter > 0){ is_finance = true; }
-            //console.log('is_finance= '+is_finance.toString()); // デバッグ用
+            console.log('is_finance= '+is_finance.toString()); // デバッグ用
+            console.log(is_securecert[0]); // デバッグ用
 
             // 金融機関と判定され、信用できない証明書と判定された場合、アラートページへリダイレクトする
             if (is_finance && !is_securecert[0]) {
-                //console.log('insecure'); // デバッグ用
                 let encoder = new TextEncoder();
                 let s = '<script>location.href="'+redirectDst+'?to='+requestDetails.url+'"</script>';
                 filter.write(encoder.encode(s));
@@ -92,7 +96,7 @@ async function getCertificate(id){
     try {
         let securityInfo = await browser.webRequest.getSecurityInfo(
             id,
-            {'certificateChain': false}
+            {'certificateChain': true}
         );
         return securityInfo;
     } catch(error) { console.error(error); }
