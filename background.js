@@ -96,7 +96,7 @@ async function getCertificate(id){
     try {
         let securityInfo = await browser.webRequest.getSecurityInfo(
             id,
-            {'certificateChain': true}
+            {'certificateChain': false}
         );
         return securityInfo;
     } catch(error) { console.error(error); }
