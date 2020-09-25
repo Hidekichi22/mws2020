@@ -1,5 +1,4 @@
 {
-
   "description": "This add-on filters phishing banking site",
   "manifest_version": 2,
   "name": "Banking filter",
@@ -12,7 +11,7 @@
   ],
   "web_accessible_resources": ["html/alert.html"],
   "background": {
-    "scripts": ["background.js", "popup.js"]
+    "scripts": ["./src/utils.js", "background.js"]
   }
 
 }
