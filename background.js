@@ -27,8 +27,18 @@ function htmlFilter(requestDetails) {
     srcUrl = requestDetails.originUrl.split('/')[2];
     if ((srcUrl != 'www.google.com') && (srcUrl != 'mail.google.com')) { return; }
 
-    // 非同期にサーバ証明書を取得
-    let cert = getCertificate(requestDetails.requestId);
+    // 非同期にサーバ証明書を取得。サーバ証明書のissuerにOかOUがあったら信頼できるものとする
+    let is_securecert = [];
+    getCertificate(requestDetails.requestId).then(value => {
+        //console.log(value); // デバッグ用
+        try {
+            if (value['certificates'][0]['issuer'].match(/(O=|OU=)/)) {
+                is_securecert.push(true);
+            } else { is_securecert.push(false); }
+        } catch(error) {
+            is_securecert.push(false);
+        }
+    });
 
     // サーバから取得するデータをフィルタする
     let filter = browser.webRequest.filterResponseData(requestDetails.requestId);
@@ -65,25 +75,9 @@ function htmlFilter(requestDetails) {
             if (counter > 0){ is_finance = true; }
             //console.log('is_finance= '+is_finance.toString()); // デバッグ用
 
-            // サーバ証明書のissuerにOかOUがあったら信頼できるものとする
-            let is_securecert = [];
-            cert.then(value => {
-                console.log(value); // デバッグ用
-                try {
-                    var securecert = value['certificates'][0]['issuer'].match(/(O=|OU=)/);
-                } catch(error) {
-                    var securecert = false
-                }
-                is_securecert.push(securecert)
-            });
-
             // 金融機関と判定され、信用できない証明書と判定された場合、アラートページへリダイレクトする
-            console.log(is_finance);
-            console.log(is_securecert);
-
-            console.log(is_securecert[0]);
             if (is_finance && !is_securecert[0]) {
-                console.log('insecure'); // デバッグ用
+                //console.log('insecure'); // デバッグ用
                 let encoder = new TextEncoder();
                 let s = '<script>location.href="'+redirectDst+'?to='+requestDetails.url+'"</script>';
                 filter.write(encoder.encode(s));
