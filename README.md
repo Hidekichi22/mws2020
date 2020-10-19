@@ -37,7 +37,7 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 
 #### Algorithm
 ![][algorithm]
-[algorithm]:https://github.com/noking-shika-senbei/mws2020/xxx.png
+[algorithm]:https://github.com/noking-shika-senbei/mws2020/NokinFlow.png
 
 ## Execution environment(As of Sep.25.2020)
 
@@ -98,11 +98,11 @@ Using Address Features of each Network Address Class"](https://www.y-nakamr.net/
 
 ![]()
 
-## ライセンス
+## LICENSE
 
-[MIT](https://github.com/mws2020/LICENSE.txt)
+MIT
 
-## 製作者
+## Member
 
 - [noking-shika-senbei](https://github.com/noking-shika-senbei)
 - [sakurasakura3939](https://github.com/sakurasakura3939)
