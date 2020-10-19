@@ -37,7 +37,7 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 
 #### Algorithm
 ![][algorithm]
-[algorithm]:https://github.com/noking-shika-senbei/mws2020/NokinFlow.png
+[algorithm]:https://github.com/noking-shika-senbei/mws2020/blob/master/NokinFlow.png
 
 ## Execution environment(As of Sep.25.2020)
 
