@@ -36,6 +36,9 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 　　　If the certificate of the transition destination site is not a DV certificate or not https communication, a warning screen is displayed.  
 
 #### Algorithm
+
+![Algorithm](https://github.com/noking-shika-senbei/mws2020/blob/master/NokinFlow.png)
+
 ![][algorithm]
 [algorithm]:https://github.com/noking-shika-senbei/mws2020/blob/master/NokinFlow.png  
 
