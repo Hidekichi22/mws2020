@@ -105,8 +105,8 @@ Using Address Features of each Network Address Class"](https://www.y-nakamr.net/
 ## 製作者
 
 - [noking-shika-senbei](https://github.com/noking-shika-senbei)
-- [](https://github.com/)
-- [](https://github.com/)
-- [](https://github.com/)
-- [](https://github.com/kzk-IS)
+- [sakurasakura3939](https://github.com/sakurasakura3939)
+- [tubutubucorn](https://github.com/tubutubucorn)
+- [salmon-0cal](https://github.com/salmon-0cal)
+- [ywatanabee](https://github.com/ywatanabee)
 - [](https://github.com/)
