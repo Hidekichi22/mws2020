@@ -21,9 +21,9 @@ Flow2. サイト遷移元がGmailだった場合、遷移先のサイト検査�
 Flow3. 遷移先のWebサイトが金融関係のサイトか否かを判別する。  
 Flow4. 遷移先のサイトが金融関係のwebサイトの場合、そのサイトの証明書がDV証明書か否かを判別する（Flow5）。  
 　　　遷移先のwebサイトが金融関係のサイトでない場合は終了する。  
-Flow5. 遷移先サイトの証明書がDV証明書、またはhttps通信か否かを判別する。  
-Flow6. 遷移先サイトの証明書がDV証明書、かつhttps通信の場合、そのままサイト遷移する。  
-　　　遷移先サイトの証明書がDV証明書でない、あるいはhttps通信でなかった場合、警告画面を表示する。
+Flow5. 遷移先サイトの証明書がDV証明書であるか否か、またはhttps通信か否かを判別する。  
+Flow6. 遷移先サイトの証明書がDV証明書でなく、かつhttps通信の場合、そのままサイト遷移する。  
+　　　遷移先サイトの証明書がDV証明書である、またはhttps通信でなかった場合、警告画面を表示する。
 
 Flow1. Determine if the site transition source is Gmail.  
 Flow2. If the site transition source is Gmail, transition to the transition destination site inspection flow (Flow 3).  
