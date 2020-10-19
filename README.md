@@ -58,11 +58,11 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 ### インストールのデモ
 ![][install_demo]
 
-[install_demo]:https://github.com/akazs/MWS2019_F.SE/blob/master/install_demo.gif
+[install_demo]:
 
 ## 実行のデモ
 
-それぞれのデモでは，対象となるサイトへアクセスする前に警告を出すことに成功している．また，[上記の決定木図](https://github.com/akazs/MWS2019_F.SE#%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)の通り，警告画面を対象サイトごとに変更することに成功している．
+それぞれのデモでは，対象となるサイトへアクセスする前に警告を出すことに成功している．また，[上記の決定木図]()の通り，警告画面を対象サイトごとに変更することに成功している．
 
 ### ブラックリストに載っているドメインの時のデモ
 
@@ -71,14 +71,14 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 
  **上記のサイトはブラックリストに載っている本当のphishingサイトであるため，アクセスには細心の注意を払って下さい．**
 
-![](https://github.com/akazs/MWS2019_F.SE/blob/master/blacklist_demo.gif)
+![]()
 
 ### http通信を使用しているサイトの時のデモ
 
 http通信を使用しているサイトにアクセスしようとしている時のデモである．
 以下では，`http://example.com`というhttp通信を使用しているサイトへのアクセスを試みている．
 
-![](https://github.com/akazs/MWS2019_F.SE/blob/master/http_demo.gif)
+![]()
 
 ### 悪質なサイトである可能性がある時のデモ
 
@@ -96,21 +96,17 @@ http通信を使用しているサイトにアクセスしようとしている�
 2つ目および3つ目の特徴については["A Classification Method of Unknown Malicious Websites
 Using Address Features of each Network Address Class"](https://www.y-nakamr.net/research/ic/iwin2017kanazawa.pdf)を参考文献としている．
 
-![](https://github.com/akazs/MWS2019_F.SE/blob/master/predict_demo.gif)
+![]()
 
 ## ライセンス
 
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+[MIT](https://github.com/)
 
 ## 製作者
 
-- [akazs](https://github.com/akazs)
-- [wanidon](https://github.com/wanidon)
-- [takemr](https://github.com/takemr)
-- [Maxcafe](https://github.com/Maxcafe)
-- [kzk-IS](https://github.com/kzk-IS)
-- [kodai-sato](https://github.com/kodai-sato)
-
-### アドバイザー
-
-[矢内直人(大阪大学 大学院情報科学研究科 セキュリティ工学講座(藤原研究室) 助教)](http://www-infosec.ist.osaka-u.ac.jp/~yanai/)
+- []()
+- [](https://github.com/)
+- [](https://github.com/)
+- [](https://github.com/)
+- [](https://github.com/kzk-IS)
+- [](https://github.com/)
