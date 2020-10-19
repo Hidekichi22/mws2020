@@ -100,7 +100,7 @@ Using Address Features of each Network Address Class"](https://www.y-nakamr.net/
 
 ## ライセンス
 
-[MIT](https://github.com/)
+[MIT](https://github.com/mws2020/LICENSE.txt)
 
 ## 製作者
 
