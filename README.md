@@ -104,7 +104,7 @@ Using Address Features of each Network Address Class"](https://www.y-nakamr.net/
 
 ## 製作者
 
-- []()
+- [nokin-shika-senbei](https://github.com/nokin-shika-senbei)
 - [](https://github.com/)
 - [](https://github.com/)
 - [](https://github.com/)
