@@ -7,7 +7,7 @@ Therefore, instead of taking measures that depend on the user's awareness, we ha
 
 ## Overview
 本ツールの対象範囲については、利用者の多いことが予期されるブラウザからのGmail利用、及び、そこに届いたフィッシングメールにより金融サイトへ遷移させる状況をユースケースとして想定しました。
-本アドオンは、金融関連フィッシングメールの受信者が、当該メール本文に記載されているURLをクリックした際に、後述のアルゴリズムに準じて悪性金融サイトか否かを用いて解析し，アクセスする前にその旨を通知するものです．
+本ツールは、金融関連フィッシングメールの受信者が、当該メール本文に記載されているURLをクリックした際に、後述のアルゴリズムに準じて悪性金融サイトか否かを用いて解析し，アクセスする前にその旨を通知するFirefox対応アドオンです．
 これにより，ユーザが悪性金融サイトに接触するリスクを軽減することができます。以下に、本機能の概要及びアルゴリズムを記載します。
 
 Regarding the scope of this tool, we have assumed the use cases of using Gmail from a browser that is expected to have many users, and the situation of transitioning to a financial site by phishing emails that arrive there.
@@ -46,15 +46,14 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 
 ## How to cotribute
 
-以下に[インストールのデモアニメーション](https://github.com/akazs/MWS2019_F.SE#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%AE%E3%83%87%E3%83%A2)があるので，説明と一緒に参考にして下さい．
+以下に本ツールのインストール方法、及びインストール方法のデモンストレーションを掲載します。ツールの使用に際し、参考にしてください。
 
-1. `$ git clone https://github.com/noking-shika-senbei/mws2020.git
-
-1. Firefoxを開き，URLバーに`about:debugging#/runtime/this-firefox`と入力する．
-
-1. 画面内の`一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`background.js`を選択して，開く．
-
-1. `Intelligent Blocker`というアドオンが追加されていれば，インストール成功．
+1. 次のコマンドを実行し、ツールが格納されているフォルダーを、格納したいディレクトリーにクローンする（ダウンロードする）。  
+　`$ git clone https://github.com/noking-shika-senbei/mws2020.git`
+2. FirefoxのURLバーに`about:debugging#/runtime/this-firefox`と入力する.
+3. 一時的な拡張機能の`一時的なアドオンを読み込む`タブを選択する.
+4. 1.でクローン（ダウンロード）したフォルダから、`background.js`を選択する.
+5. 一時的な拡張機能に`Banking filter`というアドオンが追加されていればツールが使用可能となる.
 
 ### インストールのデモ
 ![][install_demo]
