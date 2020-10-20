@@ -56,7 +56,7 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 5. 一時的な拡張機能に`Banking filter`というアドオンが追加されていればツールが使用可能となる.    
 
 ![Command](https://github.com/noking-shika-senbei/mws2020/blob/master/command.png)
-![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/How%20to%20contribute.png)
+![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/HTC2.png)
 
 ### Installation Demo
 ![install_demo]()
