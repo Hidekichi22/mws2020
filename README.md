@@ -34,7 +34,7 @@ Flow4. If the transition destination site is a financial website, determine whet
 Flow5. Determine whether the certificate of the transition destination site is a DV certificate or https communication.  
 Flow6. If the certificate of the transition destination site is a DV certificate and https communication,  
 　　　the site transitions as it is. If the certificate of the transition destination site is not a DV  
-   　certificate or not https communication, a warning screen is displayed.  
+　   　certificate or not https communication, a warning screen is displayed.  
 
 #### Algorithm
 
