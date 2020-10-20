@@ -29,11 +29,12 @@ Flow1. Determine if the site transition source is Gmail.
 Flow2. If the site transition source is Gmail, transition to the transition destination site inspection flow (Flow 3).  
 　　　If the site transition source is not Gmail, transition to Flow 1.  
 Flow3. Determine if the destination website is a financial site.  
-Flow4. If the transition destination site is a financial website, determine whether the certificate of that site is a DV certificate (Flow 5).  
-　　　If the destination website is not a financial site, it will end.  
+Flow4. If the transition destination site is a financial website, determine whether the certificate of that site is  
+　　　a DV certificate (Flow 5). If the destination website is not a financial site, it will end.  
 Flow5. Determine whether the certificate of the transition destination site is a DV certificate or https communication.  
-Flow6. If the certificate of the transition destination site is a DV certificate and https communication, the site transitions as it is.  
-　　　If the certificate of the transition destination site is not a DV certificate or not https communication, a warning screen is displayed.  
+Flow6. If the certificate of the transition destination site is a DV certificate and https communication,  
+　　　the site transitions as it is. If the certificate of the transition destination site is not a DV  
+   　certificate or not https communication, a warning screen is displayed.  
 
 #### Algorithm
 
