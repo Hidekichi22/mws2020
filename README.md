@@ -49,7 +49,8 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 以下に本ツールのインストール方法、及びインストール方法のデモンストレーションを掲載します。ツールの使用に際し、参考にしてください。
 
 1. 次のコマンドを実行し、ツールが格納されているフォルダーを、格納したいディレクトリーにクローンする（ダウンロードする）。  
-　`$ git clone https://github.com/noking-shika-senbei/mws2020.git`
+　`$ git clone https://github.com/noking-shika-senbei/mws2020.git`  
+ ![Command](https://github.com/noking-shika-senbei/mws2020/blob/master/How%20to%20cotribute.png)
 2. FirefoxのURLバーに`about:debugging#/runtime/this-firefox`と入力する.
 3. 一時的な拡張機能の`一時的なアドオンを読み込む`タブを選択する.
 4. 1.でクローン（ダウンロード）したフォルダから、`background.js`を選択する.
