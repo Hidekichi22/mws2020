@@ -54,9 +54,10 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 3. 一時的な拡張機能の`一時的なアドオンを読み込む`タブを選択する.
 4. 1.でクローン（ダウンロード）したフォルダから、`background.js`を選択する.
 5. 一時的な拡張機能に`Banking filter`というアドオンが追加されていればツールが使用可能となる.
+![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/How%20to%20cotribute.png)
 
 ### Installation Demo
-![install_demo](https://github.com/noking-shika-senbei/mws2020/blob/master/NokinFlow.png)
+![install_demo](https://github.com/noking-shika-senbei/mws2020/blob/master/How%20to%20cotribute.png)
 
 ## Execution Demo
 
