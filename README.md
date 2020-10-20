@@ -55,12 +55,10 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 4. 1.でクローン（ダウンロード）したフォルダから、`background.js`を選択する.
 5. 一時的な拡張機能に`Banking filter`というアドオンが追加されていればツールが使用可能となる.
 
-### インストールのデモ
-![][install_demo]
+### Installation Demo
+![install_demo](https://github.com/noking-shika-senbei/mws2020/blob/master/NokinFlow.png)
 
-[install_demo]:
-
-## 実行のデモ
+## Execution Demo
 
 それぞれのデモでは，対象となるサイトへアクセスする前に警告を出すことに成功している．また，[上記の決定木図]()の通り，警告画面を対象サイトごとに変更することに成功している．
 
