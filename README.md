@@ -59,7 +59,7 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 ![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/How%20to%20cotribute.png)
 
 ### Installation Demo
-![install_demo](https://github.com/noking-shika-senbei/mws2020/blob/master/How%20to%20cotribute.png)
+![install_demo]()
 
 ## Execution Demo
 
