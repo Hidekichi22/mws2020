@@ -7,7 +7,7 @@ Therefore, instead of taking measures that depend on the user's awareness, we ha
 
 ## Overview
 本ツールの対象範囲については、利用者の多いことが予期されるブラウザからのGmail利用、及び、そこに届いたフィッシングメールにより金融サイトへ遷移させる状況をユースケースとして想定しました。
-本ツールは、金融関連フィッシングメールの受信者が、当該メール本文に記載されているURLをクリックした際に、後述のアルゴリズムに準じて悪性金融サイトか否かを用いて解析し，アクセスする前にその旨を通知するFirefox対応アドオンです．
+本ツールは、金融関連フィッシングメールの受信者が、当該メール本文に記載されているURLをクリックした際に、後述のアルゴリズムに準じて悪性金融サイトか否かを用いて解析し，アクセスする前にその旨を通知するFirefox対応アドオンです。
 これにより，ユーザが悪性金融サイトに接触するリスクを軽減することができます。以下に、本機能の概要及びアルゴリズムを記載します。
 
 Regarding the scope of this tool, we have assumed the use cases of using Gmail from a browser that is expected to have many users, and the situation of transitioning to a financial site by phishing emails that arrive there.
@@ -46,7 +46,8 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 
 ## How to cotribute
 
-以下に本ツールのインストール方法、及びインストール方法のデモンストレーションを掲載します。ツールの使用に際し、参考にしてください。
+以下に本ツールのインストール方法、及びインストール方法のデモンストレーションを掲載します。ツールの使用に際し、参考にしてください。  
+The following is an explanation of how to install this tool, and a demonstration of how to install it. Please refer to it when using the tool.
 
 1. 次のコマンドを実行し、ツールが格納されているフォルダーを、格納したいディレクトリーにクローンする（ダウンロードする）.  
 　`$ git clone https://github.com/noking-shika-senbei/mws2020.git`  
