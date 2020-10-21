@@ -89,7 +89,7 @@ Seeking the nature of the algorithm, the algorithm, the algorithm is a demonstra
 ![demo3](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/nokin-https.gif)
 ## LICENSE
 
-MIT
+![MIT](https://github.com/noking-shika-senbei/mws2020/blob/master/LICENSE)
 
 ## Member
 
