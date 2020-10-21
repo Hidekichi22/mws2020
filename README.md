@@ -46,7 +46,8 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 
 ## How to cotribute
 
-以下に本ツールのインストール方法、及びインストール方法のデモンストレーションを掲載します。ツールの使用に際し、参考にしてください。
+以下に本ツールのインストール方法、及びインストール方法のデモンストレーションを掲載します。ツールの使用に際し、参考にしてください。  
+The following is an explanation of how to install this tool, and a demonstration of how to install it. Please refer to it when using the tool.
 
 1. 次のコマンドを実行し、ツールが格納されているフォルダーを、格納したいディレクトリーにクローンする（ダウンロードする）.  
 　`$ git clone https://github.com/noking-shika-senbei/mws2020.git`  
