@@ -63,11 +63,11 @@ The following is an explanation of how to install this tool, and a demonstration
 5. If an add-on called `Banking filter` is added to the temporary extension, the tool will be available.
 
 
-![Command](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/command.png)
-![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/HTC.png)
+<!--![Command](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/command.png)
+![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/HTC.png)-->
 
 ### Installation Demo
-![install_demo]()
+![install_demo](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/instration_demo.gif)
 
 ## Execution Demo
 ###
