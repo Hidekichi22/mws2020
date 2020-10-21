@@ -70,11 +70,22 @@ The following is an explanation of how to install this tool, and a demonstration
 ![install_demo]()
 
 ## Execution Demo
-### Demo1 正常な銀行サイト
+###
+ツールの実効性を検証するために、アルゴリズムにおける各フローを以下のデモンストレーションで確認した。
+1. HTTPSかつDV証明書を使用していない正常な銀行のサイトにアクセスし、警告画面を表示しないかを検証：Demo1
+2. HTTPを使用している銀行サイトにアクセスし、警告画面を表示するのかを検証:Demo2
+3. DV証明書を使用しているサイトにアクセスし、警告画面を表示するのかを検証:Demo3
+###
+Seeking the nature of the algorithm, the algorithm, the algorithm is a demonstrator of the algorithm of the algorithm
+1. Use HTTPS and DV catalogs to sneak into undefined bank sites and display Christmas: Demo1
+2. Connect to a bank site that uses HTTP and ask if you want to display Dragon Demo: Demo2
+3. Use the DV country name, connect to the site and display Dragonra Par: Demo3
+
+### Execution Demo1 正常な銀行サイト
 ![demo1](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/smbctb.gif)
-### Demo2 HTTPな銀行サイト
+### Execution Demo2 HTTPな銀行サイト
 ![demo2](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/nokin-http.gif)
-### Demo3 DV証明書な銀行サイト
+### Execution Demo3 DV証明書な銀行サイト
 ![demo3](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/nokin-https.gif)
 ## LICENSE
 
