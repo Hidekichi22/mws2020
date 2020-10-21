@@ -56,12 +56,12 @@ The following are the explanations of how to install this tool,1 to 4, and a dem
 4. 1.でクローン（ダウンロード）したフォルダから、`background.js`を選択する.
 5. 一時的な拡張機能に`Banking filter`というアドオンが追加されていればツールが使用可能となる.    
 
-1. Execute the following command to clone (download) the folder where the tool is stored to the directory where you want to store it.  
+1 Execute the following command to clone (download) the folder where the tool is stored to the directory where you want to store it.  
    `$ git clone https://github.com/noking-shika-senbei/mws2020.git`
-2. Type ʻabout: debugging # / runtime / this-firefox` in the Firefox URL bar.
-3. Select the `Load temporary add-ons` tab for temporary extensions.
-4. Select `background.js` from the folder cloned (downloaded) in 1.
-5. If an add-on called `Banking filter` is added to the temporary extension, the tool will be available.
+2 Type ʻabout: debugging # / runtime / this-firefox` in the Firefox URL bar.
+3 Select the `Load temporary add-ons` tab for temporary extensions.
+4 Select `background.js` from the folder cloned (downloaded) in 1.
+5 If an add-on called `Banking filter` is added to the temporary extension, the tool will be available.
 
 ![Command](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/command.png)
 ![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/HTC.png)
