@@ -1,4 +1,4 @@
-# Phishing Solution Tool - NOKING
+# Phishing Solution Tool - NOKING - <img src="https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/nokin-bank.png" width="100">
 フィッシングによる被害は後を絶たないのが現状であり、その多くの原因は、ユーザーの不注意によるものがほとんどです。しかしながら、人間の意識は経時的に衰退するものであり、継続的に意識を高揚させる施策についてはユーザーの環境によって異なります。
 そのため、ユーザーの意識に依存する対策を講じるのではなく、ユーザーの不注意（フィッシングメール記載のURLをクリックすること）による悪性サイトへの遷移を防止することを目的にFirefoxアドオンツールを開発しました。
 
@@ -7,7 +7,7 @@ Therefore, instead of taking measures that depend on the user's awareness, we ha
 
 ## Overview
 本ツールの対象範囲については、利用者の多いことが予期されるブラウザからのGmail利用、及び、そこに届いたフィッシングメールにより金融サイトへ遷移させる状況をユースケースとして想定しました。
-本ツールは、金融関連フィッシングメールの受信者が、当該メール本文に記載されているURLをクリックした際に、後述のアルゴリズムに準じて悪性金融サイトか否かを用いて解析し，アクセスする前にその旨を通知するFirefox対応アドオンです．
+本ツールは、金融関連フィッシングメールの受信者が、当該メール本文に記載されているURLをクリックした際に、後述のアルゴリズムに準じて悪性金融サイトか否かを用いて解析し，アクセスする前にその旨を通知するFirefox対応アドオンです。
 これにより，ユーザが悪性金融サイトに接触するリスクを軽減することができます。以下に、本機能の概要及びアルゴリズムを記載します。
 
 Regarding the scope of this tool, we have assumed the use cases of using Gmail from a browser that is expected to have many users, and the situation of transitioning to a financial site by phishing emails that arrive there.
@@ -38,7 +38,7 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 
 ### Algorithm
 
-![Algorithm](https://github.com/noking-shika-senbei/mws2020/blob/master/NokinFlow.png)
+![Algorithm](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/NokinFlow.png)
 
 ## Execution environment(As of Sep.25.2020)
 
@@ -55,8 +55,8 @@ Flow6. If the certificate of the transition destination site is a DV certificate
 4. 1.でクローン（ダウンロード）したフォルダから、`background.js`を選択する.
 5. 一時的な拡張機能に`Banking filter`というアドオンが追加されていればツールが使用可能となる.    
 
-![Command](https://github.com/noking-shika-senbei/mws2020/blob/master/command.png)
-![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/HTC.png)
+![Command](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/command.png)
+![demo](https://github.com/noking-shika-senbei/mws2020/blob/master/pictures/HTC.png)
 
 ### Installation Demo
 ![install_demo]()

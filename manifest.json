@@ -1,7 +1,7 @@
 {
   "description": "This add-on filters phishing banking site",
   "manifest_version": 2,
-  "name": "Banking filter",
+  "name": "Phishing Solution Tool - NOKING -",
   "version": "1.0",
 
   "permissions": [
